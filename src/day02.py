@@ -1,0 +1,2 @@
+print(sum(int(h.split()[1])for l in open('day02.txt')for(h,t)in[l.replace(*';,').split(': ')]if all(int(n)<={'red':12,'green':13,'blue':14}[c]for s in t.split(', ')for(n,c)in[s.split()])))
+print(sum(any(d.update({c:max(d[c],int(n))})for s in t.split(', ')for(n,c)in[s.split()])or d[r]*d[g]*d[b]for(r,g,b)in[('red','green','blue')]for l in open('day02.txt')for(t,d)in[(l.replace(*';,').split(': ')[1],{r:0,g:0,b:0})]))
