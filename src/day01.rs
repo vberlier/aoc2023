@@ -14,7 +14,7 @@ mod tests {
 
     #[test]
     fn part1() {
-        let solution = INPUT.lines().flat_map(parse_calibration).sum::<u32>();
+        let solution = INPUT.lines().filter_map(parse_calibration).sum::<u32>();
         insta::assert_snapshot!(solution.to_string(), @"54573");
     }
 
@@ -29,7 +29,7 @@ mod tests {
             s.replace(d, &format!("{d}{n}{d}", n = i + 1))
         })
         .lines()
-        .flat_map(parse_calibration)
+        .filter_map(parse_calibration)
         .sum::<u32>();
         insta::assert_snapshot!(solution.to_string(), @"54591");
     }
